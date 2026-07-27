@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simon Says – Memory Game</title>
+  <meta name="description" content="Play the classic Simon Says memory game with sound, animations, and high score tracking." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="sgame.css" />
+</head>
+<body>
+
+  <!-- Animated background particles -->
+  <div class="bg-particles" aria-hidden="true">
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+  </div>
+
+  <div class="game-wrapper">
+
+    <!-- Header -->
+    <header class="game-header">
+      <h1 class="game-title">
+        <span class="title-simon">SIMON</span>
+        <span class="title-says">SAYS</span>
+      </h1>
+      <p class="game-subtitle">Test Your Memory</p>
+    </header>
+
+    <!-- Score Bar -->
+    <div class="score-bar">
+      <div class="score-item" id="level-display">
+        <span class="score-label">LEVEL</span>
+        <span class="score-value" id="level-value">0</span>
+      </div>
+      <div class="score-item" id="highscore-display">
+        <span class="score-label">BEST</span>
+        <span class="score-value" id="highscore-value">0</span>
+      </div>
+    </div>
+
+    <!-- Status Message -->
+    <div class="status-wrap">
+      <p class="status-msg" id="status-msg">Press <strong>Start</strong> to play!</p>
+    </div>
+
+    <!-- Game Board -->
+    <main class="board-wrap" role="main">
+      <div class="simon-board" id="simon-board" aria-label="Simon Says game board">
+
+        <!-- Colour pads -->
+        <button class="pad red-pad"   id="red"    aria-label="Red button"    disabled></button>
+        <button class="pad blue-pad"  id="blue"   aria-label="Blue button"   disabled></button>
+        <button class="pad green-pad" id="green"  aria-label="Green button"  disabled></button>
+        <button class="pad yellow-pad"id="yellow" aria-label="Yellow button" disabled></button>
+
+        <!-- Centre circle -->
+        <div class="centre-circle" aria-hidden="true">
+          <div class="centre-ring">
+            <span class="centre-icon">▶</span>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button class="btn-start" id="btn-start">START GAME</button>
+    </div>
+
+    <!-- High Score Board -->
+    <section class="highscore-section" aria-label="High scores">
+      <h2 class="hs-title">🏆 High Score Board</h2>
+      <ol class="hs-list" id="hs-list">
+        <li class="hs-empty">No scores yet – be the first!</li>
+      </ol>
+      <button class="btn-clear-hs" id="btn-clear-hs" title="Clear all saved scores">Clear Scores</button>
+    </section>
+
+  </div><!-- .game-wrapper -->
+
+  <script src="sgame.js"></script>
+</body>
+</html>
